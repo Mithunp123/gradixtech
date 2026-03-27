@@ -1,5 +1,5 @@
 /* ========================================
-   SERVICES — Premium Split
+   SERVICES — White Cards, No Icon BG
    ======================================== */
 
 .services {
@@ -12,8 +12,8 @@
 
 .services__layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 64px;
+  grid-template-columns: 400px 1fr;
+  gap: 72px;
   align-items: start;
 }
 
@@ -23,14 +23,14 @@
 }
 
 .services__left .section-subtitle {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .services__cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 13px 28px;
   background: var(--color-ink);
   color: #fff;
   font-family: var(--font-body);
@@ -38,10 +38,25 @@
   font-weight: 600;
   border-radius: 100px;
   transition: all var(--duration-base) var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
 }
 
+.services__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity var(--duration-base);
+  border-radius: inherit;
+}
+
+.services__cta:hover::before { opacity: 1; }
+.services__cta span,
+.services__cta svg { position: relative; z-index: 1; }
+
 .services__cta:hover {
-  background: var(--color-brand);
   transform: translateY(-2px);
   box-shadow: var(--shadow-brand);
 }
@@ -54,7 +69,7 @@
 
 .service-card {
   position: relative;
-  padding: 28px 24px;
+  padding: 32px 28px;
   background: var(--color-bg-pure);
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-lg);
@@ -64,33 +79,31 @@
 
 .service-card:hover {
   border-color: transparent;
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
 }
 
+/* Icon — NO background */
 .service-card__icon {
-  width: 44px;
-  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: var(--color-brand-subtle);
   color: var(--color-brand);
-  margin-bottom: 16px;
-  transition: all var(--duration-base) var(--ease-out-expo);
+  margin-bottom: 18px;
+  background: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  transition: transform var(--duration-base) var(--ease-out-expo);
 }
 
 .service-card:hover .service-card__icon {
-  background: var(--color-brand);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: var(--shadow-brand);
+  transform: scale(1.2);
 }
 
 .service-card__title {
   font-family: var(--font-heading);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-ink);
   margin-bottom: 8px;
@@ -100,7 +113,7 @@
 .service-card__desc {
   font-size: 0.84rem;
   color: var(--color-ink-muted);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .service-card__hover-line {
@@ -108,7 +121,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: var(--gradient-brand) !important;
   opacity: 0;
   transform: scaleX(0);

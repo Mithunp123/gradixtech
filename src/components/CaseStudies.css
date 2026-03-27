@@ -1,5 +1,5 @@
 /* ========================================
-   CASE STUDIES — Premium Tabs
+   CASE STUDIES — White Panel
    ======================================== */
 
 .case-studies {
@@ -12,7 +12,7 @@
 
 .case-studies__header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 22px 24px;
+  padding: 24px 26px;
   text-align: left;
   color: var(--color-ink-muted);
   border-bottom: 1px solid var(--color-rule-soft);
@@ -70,7 +70,7 @@
 
 .case-tab__name {
   font-family: var(--font-heading);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 2px;
   color: inherit;
@@ -81,9 +81,9 @@
 
 .case-tab__industry {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   color: var(--color-ink-light);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -100,7 +100,7 @@
 .case-tab--active .case-tab__arrow { opacity: 1; }
 
 /* Detail */
-.case-detail { padding: 40px 44px; }
+.case-detail { padding: 44px 48px; }
 
 .case-detail__tags {
   display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap;
@@ -108,23 +108,23 @@
 
 .case-detail__tag {
   padding: 3px 10px;
-  background: var(--color-brand-subtle);
-  border: 1px solid rgba(26,108,255,0.06);
+  background: transparent;
+  border: 1px solid var(--color-rule);
   border-radius: 100px;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: var(--color-brand);
-  font-weight: 700;
+  font-size: 0.6rem;
+  color: var(--color-ink-muted);
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .case-detail__client {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--color-ink);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   letter-spacing: -0.04em;
 }
 
@@ -133,22 +133,22 @@
 }
 
 .case-detail__section {
-  padding: 20px 22px;
+  padding: 22px 24px;
   background: var(--color-bg-soft);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-rule-soft);
 }
 
 .case-detail__section--impact {
-  background: var(--color-brand-subtle);
-  border-color: rgba(26,108,255,0.06);
+  background: rgba(26,108,255,0.03);
+  border-color: rgba(26,108,255,0.08);
 }
 
 .case-detail__section-header {
   display: flex; align-items: center; gap: 8px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--color-brand);
   margin-bottom: 10px;
   letter-spacing: -0.01em;

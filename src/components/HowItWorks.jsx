@@ -5,22 +5,25 @@ import './HowItWorks.css';
 
 const steps = [
   {
-    icon: <Search size={26} />,
+    icon: <Search size={24} strokeWidth={1.5} />,
     step: '01',
+    color: '#1A6CFF',
     title: 'Discover & Architect',
-    description: 'We analyze your business needs and plan the perfect Web, App, and AI tech stack tailored to your goals.',
+    description: 'We analyze your business needs and plan the perfect web, app, and tech stack tailored to your goals.',
     details: ['Business Analysis', 'Tech Stack Planning', 'Architecture Design'],
   },
   {
-    icon: <Code2 size={26} />,
+    icon: <Code2 size={24} strokeWidth={1.5} />,
     step: '02',
+    color: '#8B5CF6',
     title: 'Build & Integrate',
-    description: 'Our team develops high-performance platforms, integrating smart AI tools and automation workflows.',
-    details: ['Agile Development', 'AI Integration', 'Quality Assurance'],
+    description: 'Our team develops high-performance platforms, integrating smart tools and automation workflows.',
+    details: ['Agile Development', 'System Integration', 'Quality Assurance'],
   },
   {
-    icon: <Rocket size={26} />,
+    icon: <Rocket size={24} strokeWidth={1.5} />,
     step: '03',
+    color: '#F97316',
     title: 'Launch & Automate',
     description: 'We deploy your solution and set up continuous automation for lead generation and growth acceleration.',
     details: ['Deployment', 'Automation Setup', 'Growth Tracking'],
@@ -32,7 +35,6 @@ export default function HowItWorks() {
 
   return (
     <section className="how-it-works" id="how-it-works" ref={ref}>
-      <div className="how-it-works__glow" />
       <div className="container">
         <div className="how-it-works__header">
           <motion.div
@@ -72,8 +74,15 @@ export default function HowItWorks() {
               transition={{ duration: 0.7, delay: 0.2 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="how-it-works__card-top">
-                <div className="how-it-works__icon">{step.icon}</div>
-                <span className="how-it-works__step-num">{step.step}</span>
+                <div className="how-it-works__icon" style={{ color: step.color }}>
+                  {step.icon}
+                </div>
+                <span
+                  className="how-it-works__step-num"
+                  style={{ color: step.color, opacity: 0.15 }}
+                >
+                  {step.step}
+                </span>
               </div>
               <h3 className="how-it-works__card-title">{step.title}</h3>
               <p className="how-it-works__card-desc">{step.description}</p>
@@ -83,7 +92,6 @@ export default function HowItWorks() {
                 ))}
               </div>
 
-              {/* Connector Line */}
               {i < steps.length - 1 && (
                 <div className="how-it-works__connector" />
               )}

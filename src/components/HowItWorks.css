@@ -1,5 +1,5 @@
 /* ========================================
-   HOW IT WORKS — Creative Cards
+   HOW IT WORKS — White Cards, No Icon BG
    ======================================== */
 
 .how-it-works {
@@ -10,7 +10,7 @@
 
 .how-it-works__header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,13 +19,13 @@
 .how-it-works__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
   position: relative;
 }
 
 .how-it-works__card {
   position: relative;
-  padding: 36px 28px;
+  padding: 40px 32px 36px;
   background: var(--color-bg-pure);
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-xl);
@@ -36,7 +36,7 @@
 .how-it-works__card::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 3px;
@@ -47,54 +47,44 @@
 
 .how-it-works__card:hover {
   border-color: transparent;
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
 }
 
 .how-it-works__card:hover::before { opacity: 1; }
 
 .how-it-works__card-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
+/* Icon — NO background, just color */
 .how-it-works__icon {
-  width: 52px;
-  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
-  background: var(--color-brand-subtle);
-  color: var(--color-brand);
-  transition: all var(--duration-base) var(--ease-out-expo);
+  transition: transform var(--duration-base) var(--ease-out-expo);
 }
 
 .how-it-works__card:hover .how-it-works__icon {
-  background: var(--color-brand);
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: var(--shadow-brand);
+  transform: scale(1.15);
 }
 
+/* Step number — large, colored, transparent */
 .how-it-works__step-num {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 800;
-  color: var(--color-rule-soft);
   line-height: 1;
   letter-spacing: -0.06em;
-}
-
-.how-it-works__card:hover .how-it-works__step-num {
-  color: rgba(26,108,255,0.06);
+  user-select: none;
 }
 
 .how-it-works__card-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-ink);
   margin-bottom: 10px;
@@ -105,7 +95,7 @@
   font-size: 0.88rem;
   color: var(--color-ink-muted);
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .how-it-works__tags {
@@ -115,29 +105,28 @@
 }
 
 .how-it-works__tag {
-  padding: 4px 12px;
+  padding: 5px 14px;
   background: var(--color-bg-soft);
   border-radius: 100px;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--color-ink-muted);
   font-weight: 400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
-.how-it-works__connector {
-  display: none;
-}
+/* Connector */
+.how-it-works__connector { display: none; }
 
 @media (min-width: 1025px) {
   .how-it-works__connector {
     display: block;
     position: absolute;
-    top: 52px;
+    top: 56px;
     right: -12px;
     width: 24px;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-brand), transparent);
+    background: var(--color-rule);
     z-index: 2;
   }
   .how-it-works__connector::after {
@@ -152,6 +141,9 @@
   }
 }
 
+.how-it-works__glow { display: none; }
+
 @media (max-width: 1024px) {
   .how-it-works__grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .how-it-works__step-num { font-size: 3rem; }
 }
