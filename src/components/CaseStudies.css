@@ -1,0 +1,186 @@
+/* ========================================
+   CASE STUDIES — Premium Tabs
+   ======================================== */
+
+.case-studies {
+  position: relative;
+  padding: var(--section-gap) 0;
+  background: var(--color-bg);
+}
+
+.case-studies__bg-line { display: none; }
+
+.case-studies__header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.case-studies__content {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  background: var(--color-bg-pure);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-studies__tabs {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-rule);
+  background: var(--color-bg-soft);
+}
+
+.case-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px 24px;
+  text-align: left;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid var(--color-rule-soft);
+  transition: all var(--duration-base);
+  position: relative;
+  cursor: pointer;
+}
+
+.case-tab:last-child { border-bottom: none; }
+.case-tab:hover { background: rgba(26,108,255,0.02); }
+
+.case-tab--active {
+  background: var(--color-bg-pure);
+  color: var(--color-ink);
+}
+
+.case-tab--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-brand);
+  border-radius: 0 3px 3px 0;
+}
+
+.case-tab__name {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: inherit;
+  letter-spacing: -0.01em;
+}
+
+.case-tab--active .case-tab__name { color: var(--color-ink); }
+
+.case-tab__industry {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-ink-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-tab__arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--color-brand);
+  transition: opacity var(--duration-fast);
+}
+
+.case-tab--active .case-tab__arrow { opacity: 1; }
+
+/* Detail */
+.case-detail { padding: 40px 44px; }
+
+.case-detail__tags {
+  display: flex; gap: 6px; margin-bottom: 18px; flex-wrap: wrap;
+}
+
+.case-detail__tag {
+  padding: 3px 10px;
+  background: var(--color-brand-subtle);
+  border: 1px solid rgba(26,108,255,0.06);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-brand);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-detail__client {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 32px;
+  letter-spacing: -0.04em;
+}
+
+.case-detail__sections {
+  display: flex; flex-direction: column; gap: 16px;
+}
+
+.case-detail__section {
+  padding: 20px 22px;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-rule-soft);
+}
+
+.case-detail__section--impact {
+  background: var(--color-brand-subtle);
+  border-color: rgba(26,108,255,0.06);
+}
+
+.case-detail__section-header {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-brand);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.case-detail__section p {
+  font-size: 0.86rem;
+  color: var(--color-ink-muted);
+  line-height: 1.7;
+}
+
+.case-detail__impacts { display: flex; flex-direction: column; gap: 8px; }
+
+.case-detail__impact {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.86rem;
+  color: var(--color-ink-secondary);
+  font-weight: 500;
+}
+
+.case-detail__impact-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .case-studies__content { grid-template-columns: 1fr; }
+  .case-studies__tabs { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--color-rule); }
+  .case-tab { min-width: 160px; border-bottom: none; border-right: 1px solid var(--color-rule-soft); }
+  .case-tab--active::before { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: 3px; border-radius: 3px 3px 0 0; }
+  .case-tab__arrow { display: none; }
+  .case-detail { padding: 24px 20px; }
+}

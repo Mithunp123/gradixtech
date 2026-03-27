@@ -1,0 +1,84 @@
+/* ========================================
+   NAVBAR — Editorial Minimal
+   ======================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.navbar--scrolled {
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.navbar__logo:hover { opacity: 0.8; }
+
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar--scrolled .navbar__logo-img {
+  height: 30px;
+}
+
+/* CTA */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 100px;
+  transition: all var(--duration-base) var(--ease-out-expo);
+  letter-spacing: 0.01em;
+}
+
+.navbar__cta:hover {
+  background: var(--color-brand);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
+}
+
+.navbar__cta-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+.navbar__cta:hover .navbar__cta-arrow {
+  transform: translate(2px, -2px);
+  background: rgba(255,255,255,0.25);
+}

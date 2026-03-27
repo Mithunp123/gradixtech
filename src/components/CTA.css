@@ -1,0 +1,166 @@
+/* ========================================
+   CTA — Dark Cinematic
+   ======================================== */
+
+.cta-section {
+  padding: var(--section-gap) 0;
+  background: var(--color-bg);
+}
+
+.cta-card {
+  position: relative;
+  padding: 80px 56px;
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-card__orb { display: none; }
+
+.cta-card__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(26,108,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--color-brand-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.cta-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+
+.cta-card__title-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-card__desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 440px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.cta-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-card__btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 34px;
+  background: var(--color-brand);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 100px;
+  box-shadow: var(--shadow-brand);
+  transition: all var(--duration-base) var(--ease-out-expo);
+}
+
+.cta-card__btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(26,108,255,0.3);
+}
+
+.cta-card__btn-secondary {
+  padding: 14px 28px;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--duration-base);
+}
+
+.cta-card__btn-secondary:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.cta-card__stats {
+  display: flex; align-items: center; gap: 32px;
+}
+
+.cta-card__stat {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+
+.cta-card__stat strong {
+  font-family: var(--font-heading);
+  font-size: 1.1rem; font-weight: 700; color: #fff;
+}
+
+.cta-card__stat span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem; color: rgba(255,255,255,0.35);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+.cta-card__stat-divider {
+  width: 1px; height: 32px;
+  background: rgba(255,255,255,0.08);
+}
+
+@media (max-width: 768px) {
+  .cta-card { padding: 48px 20px; border-radius: var(--radius-xl); }
+  .cta-card__actions { flex-direction: column; width: 100%; }
+  .cta-card__btn-primary, .cta-card__btn-secondary { width: 100%; justify-content: center; text-align: center; }
+  .cta-card__stats { gap: 20px; flex-wrap: wrap; justify-content: center; }
+}
