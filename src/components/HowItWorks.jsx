@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Search, Code2, Rocket } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import './HowItWorks.css';
 
 const steps = [
@@ -79,7 +80,9 @@ export default function HowItWorks() {
               <p className="how-it-works__card-desc">{step.description}</p>
               <div className="how-it-works__tags">
                 {step.details.map((detail, j) => (
-                  <span key={j} className="how-it-works__tag">{detail}</span>
+                  <Badge key={j} variant="outline" className="font-medium text-[0.7rem] bg-slate-50 border-slate-200 text-slate-600 rounded-md">
+                    {detail}
+                  </Badge>
                 ))}
               </div>
 

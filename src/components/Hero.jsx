@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Star } from 'lucide-react';
 import { useRef } from 'react';
+import { Button } from '@/components/ui/button';
 import './Hero.css';
 
 const marqueeWords = ['Innovation', '•', 'Strategy', '•', 'Design', '•', 'Development', '•', 'Automation', '•', 'Growth', '•', 'Performance', '•'];
@@ -77,16 +78,20 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.05 }}
         >
-          <a href="#contact" className="hero__btn-primary">
-            <span>Start a Project</span>
-            <ArrowRight size={16} strokeWidth={2.5} />
-          </a>
-          <a href="#case-studies" className="hero__btn-outline">
-            <div className="hero__play-circle">
-              <Play size={10} fill="currentColor" />
-            </div>
-            <span>See Our Work</span>
-          </a>
+          <Button asChild size="lg" className="hero__btn-primary rounded-full px-8 py-6 text-[0.9rem]">
+            <a href="#contact">
+              <span>Start a Project</span>
+              <ArrowRight size={16} strokeWidth={2.5} className="ml-2" />
+            </a>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="hero__btn-outline rounded-full px-8 py-6 text-[0.9rem] hover:bg-transparent">
+            <a href="#case-studies">
+              <div className="hero__play-circle mr-2">
+                <Play size={10} fill="currentColor" />
+              </div>
+              <span>See Our Work</span>
+            </a>
+          </Button>
         </motion.div>
 
         {/* Stats Row */}

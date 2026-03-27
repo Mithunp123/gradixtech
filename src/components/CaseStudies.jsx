@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowUpRight, ChevronRight, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import './CaseStudies.css';
 
 const caseStudies = [
@@ -95,7 +96,9 @@ export default function CaseStudies() {
             >
               <div className="case-detail__tags">
                 {caseStudies[activeCase].tags.map((tag, i) => (
-                  <span key={i} className="case-detail__tag">{tag}</span>
+                  <Badge key={i} variant="secondary" className="font-mono text-[0.65rem] tracking-wider uppercase py-1 px-3">
+                    {tag}
+                  </Badge>
                 ))}
               </div>
 

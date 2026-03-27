@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import './CTA.css';
 
 export default function CTA() {
@@ -50,13 +51,17 @@ export default function CTA() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              <a href="#contact" className="cta-card__btn-primary">
-                <span>Book a Strategy Call</span>
-                <ArrowRight size={18} />
-              </a>
-              <a href="#contact" className="cta-card__btn-secondary">
-                Let&apos;s Talk Growth
-              </a>
+              <Button asChild size="lg" className="cta-card__btn-primary rounded-full px-8 py-6 text-sm">
+                <a href="#contact">
+                  <span>Book a Strategy Call</span>
+                  <ArrowRight size={18} className="ml-2" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="cta-card__btn-secondary rounded-full px-7 py-6 text-sm bg-transparent hover:bg-transparent">
+                <a href="#contact">
+                  Let&apos;s Talk Growth
+                </a>
+              </Button>
             </motion.div>
 
             <motion.div
