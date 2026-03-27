@@ -29,7 +29,7 @@ export default function Hero() {
 
       <motion.div
         className="container hero__container"
-        style={{ y: yText, opacity: opacityFade, scale }}
+        style={{ opacity: opacityFade, scale }}
       >
         {/* Eyebrow */}
         <motion.div

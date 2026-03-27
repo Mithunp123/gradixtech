@@ -105,14 +105,18 @@
 }
 
 .how-it-works__tag {
-  padding: 5px 14px;
-  background: var(--color-bg-soft);
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  color: var(--color-ink-muted);
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-ink-secondary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.how-it-works__tag:not(:last-child)::after {
+  content: "•";
+  color: var(--color-rule);
+  margin-left: 6px;
 }
 
 /* Connector */

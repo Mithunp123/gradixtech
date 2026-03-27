@@ -21,15 +21,7 @@ export default function CTA() {
           <div className="cta-card__grid" />
 
           <div className="cta-card__content">
-            <motion.div
-              className="cta-card__badge"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Sparkles size={14} />
-              <span>Let&apos;s Build Something Great</span>
-            </motion.div>
+
 
             <motion.h2
               className="cta-card__title"

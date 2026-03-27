@@ -43,15 +43,6 @@ export default function CaseStudies() {
       <div className="case-studies__bg-line" />
       <div className="container">
         <div className="case-studies__header">
-          <motion.div
-            className="section-label"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="dot" />
-            Case Studies
-          </motion.div>
           <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 30 }}

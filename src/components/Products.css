@@ -87,17 +87,18 @@
 .product-card__tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 3px 10px;
-  background: transparent;
-  border: 1px solid var(--color-rule);
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--color-ink-muted);
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  border-bottom: 2px solid var(--color-brand);
+  padding-bottom: 2px;
+}
+.product-card__tag svg {
+  color: var(--color-brand);
 }
 
 .product-card__title {

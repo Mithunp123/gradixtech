@@ -10,10 +10,12 @@
 .cta-card {
   position: relative;
   padding: 80px 56px;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-pure);
+  border: 1px solid var(--color-rule);
   border-radius: var(--radius-2xl);
   overflow: hidden;
   text-align: center;
+  box-shadow: var(--shadow-md);
 }
 
 .cta-card__orb { display: none; }
@@ -22,8 +24,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
@@ -49,28 +51,13 @@
   align-items: center;
 }
 
-.cta-card__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 14px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  color: var(--color-brand-light);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-}
+
 
 .cta-card__title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 800;
-  color: #fff;
+  color: var(--color-ink);
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: 18px;
@@ -85,7 +72,7 @@
 
 .cta-card__desc {
   font-size: 1rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--color-ink-muted);
   max-width: 440px;
   line-height: 1.7;
   margin-bottom: 36px;
@@ -120,18 +107,18 @@
 
 .cta-card__btn-secondary {
   padding: 14px 28px;
-  color: rgba(255,255,255,0.7);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 500;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--color-rule);
   transition: all var(--duration-base);
 }
 
 .cta-card__btn-secondary:hover {
-  border-color: rgba(255,255,255,0.25);
-  color: #fff;
+  border-color: var(--color-brand);
+  color: var(--color-brand);
 }
 
 .cta-card__stats {
@@ -144,18 +131,18 @@
 
 .cta-card__stat strong {
   font-family: var(--font-heading);
-  font-size: 1.1rem; font-weight: 700; color: #fff;
+  font-size: 1.1rem; font-weight: 700; color: var(--color-ink);
 }
 
 .cta-card__stat span {
   font-family: var(--font-mono);
-  font-size: 0.62rem; color: rgba(255,255,255,0.35);
+  font-size: 0.62rem; color: var(--color-ink-muted);
   letter-spacing: 0.06em; text-transform: uppercase;
 }
 
 .cta-card__stat-divider {
   width: 1px; height: 32px;
-  background: rgba(255,255,255,0.08);
+  background: var(--color-rule);
 }
 
 @media (max-width: 768px) {

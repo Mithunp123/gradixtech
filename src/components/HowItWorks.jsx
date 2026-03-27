@@ -37,15 +37,6 @@ export default function HowItWorks() {
     <section className="how-it-works" id="how-it-works" ref={ref}>
       <div className="container">
         <div className="how-it-works__header">
-          <motion.div
-            className="section-label"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="dot" />
-            Our Process
-          </motion.div>
           <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: 30 }}
