@@ -1,0 +1,209 @@
+/* ========================================
+   TRUSTED BRANDS SECTION
+   ======================================== */
+
+.trusted-brands {
+  position: relative;
+  padding: 48px 24px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.trusted-brands__wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__wrapper {
+    flex-direction: row;
+  }
+}
+
+/* Left Side - Text */
+.trusted-brands__text {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__text {
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+
+.trusted-brands__title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__title {
+    font-size: 2.25rem;
+  }
+}
+
+.trusted-brands__brand-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #03c19a;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__brand-name {
+    font-size: 2.25rem;
+  }
+}
+
+.trusted-brands__subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 8px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Right Side - Marquee Container */
+.trusted-brands__marquee-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__marquee-wrapper {
+    width: 50%;
+  }
+}
+
+/* Gradient Overlay */
+.trusted-brands__marquee-wrapper::before,
+.trusted-brands__marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trusted-brands__marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.trusted-brands__marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.trusted-brands__marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trusted-brands__marquee-track {
+  display: flex;
+  gap: 12px;
+  animation: scroll-horizontal 15s linear infinite;
+  will-change: transform;
+}
+
+.trusted-brands__marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Brand Item */
+.trusted-brands__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 12px;
+  flex-shrink: 0;
+}
+
+.trusted-brands__logo-circle {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__logo-circle {
+    padding: 12px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+}
+
+.trusted-brands__item:hover .trusted-brands__logo-circle {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.trusted-brands__logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__logo {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.trusted-brands__name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #374151;
+  text-align: center;
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .trusted-brands__name {
+    font-size: 0.875rem;
+  }
+}
+
+/* Scrolling Animation */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

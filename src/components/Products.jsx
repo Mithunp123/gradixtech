@@ -13,6 +13,7 @@ const products = [
     gradient: 'linear-gradient(135deg, #0044CC, #0066FF)',
     accentIcon: <Lock size={16} />,
     tag: 'Security',
+    image: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80', // Password security
   },
   {
     icon: <FileText size={28} />,
@@ -23,6 +24,7 @@ const products = [
     gradient: 'linear-gradient(135deg, #0066FF, #00B4FF)',
     accentIcon: <Zap size={16} />,
     tag: 'Automation',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80', // Document automation
   },
   {
     icon: <Users size={28} />,
@@ -33,6 +35,7 @@ const products = [
     gradient: 'linear-gradient(135deg, #00B4FF, #66D4FF)',
     accentIcon: <BarChart3 size={16} />,
     tag: 'Marketing',
+    image: 'https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&q=80', // Social media marketing
   },
 ];
 
@@ -72,6 +75,12 @@ export default function Products() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
+              {/* Product Image */}
+              <div className="product-card__image">
+                <img src={product.image} alt={product.title} />
+                <div className="product-card__image-overlay" />
+              </div>
+
               <div className="product-card__header">
                 <div className="product-card__icon" style={{ background: product.gradient }}>
                   {product.icon}

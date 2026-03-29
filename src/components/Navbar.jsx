@@ -1,17 +1,38 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Moon, Sun } from 'lucide-react';
 import logoImg from '../assets/image.png';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setDarkMode(true);
+      document.documentElement.classList.add('dark-mode');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   return (
     <motion.nav
@@ -25,12 +46,22 @@ export default function Navbar() {
           <img src={logoImg} alt="Gradix Technologies" className="navbar__logo-img" />
         </a>
 
-        <a href="#contact" className="navbar__cta">
-          <span>Book a Call</span>
-          <div className="navbar__cta-arrow">
-            <ArrowUpRight size={14} strokeWidth={2.5} />
-          </div>
-        </a>
+        <div className="navbar__actions">
+          <button 
+            onClick={toggleTheme} 
+            className="navbar__theme-toggle"
+            aria-label="Toggle theme"
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+
+          <a href="#contact" className="navbar__cta">
+            <span>Book a Call</span>
+            <div className="navbar__cta-arrow">
+              <ArrowUpRight size={14} strokeWidth={2.5} />
+            </div>
+          </a>
+        </div>
       </div>
     </motion.nav>
   );

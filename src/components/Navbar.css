@@ -36,13 +36,49 @@
 .navbar__logo:hover { opacity: 0.8; }
 
 .navbar__logo-img {
-  height: 52px;
+  height: 65px;
   width: auto;
   object-fit: contain;
 }
 
 .navbar--scrolled .navbar__logo-img {
-  height: 44px;
+  height: 56px;
+}
+
+/* Actions Container */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Theme Toggle */
+.navbar__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-ink);
+}
+
+.navbar__theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.dark-mode .navbar__theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.dark-mode .navbar__theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* CTA */
